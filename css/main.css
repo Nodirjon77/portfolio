@@ -231,6 +231,8 @@
     display: block;
     border-radius: var(--radius-lg);
     width: 100%;
+    height: auto;
+    object-fit: cover;
     max-width: 360px;
     border: 1px solid var(--border-2);
     transition: filter 0.3s;
