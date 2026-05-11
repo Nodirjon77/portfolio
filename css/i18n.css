@@ -1,0 +1,64 @@
+/* =============================================
+   i18n.css — Language switcher
+   ============================================= */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 4px;
+    margin-left: 1.5rem;
+}
+.lang-btn {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-3);
+    background: transparent;
+    border: none;
+    padding: 0.3rem 0.65rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.lang-btn:hover { color: var(--text-2); background: rgba(255,255,255,0.06); }
+.lang-btn.active { background: var(--grad-main); color: #fff; }
+.main-nav { display: flex; align-items: center; }
+@media (max-width: 768px) {
+    .main-nav { display: none; }
+    .main-nav.is-open { display: flex; }
+}
+
+/* =============================================
+   THEME TOGGLE BUTTON
+   ============================================= */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-2);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+.theme-toggle:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: inline; }
+
+[data-theme="light"] .theme-toggle .icon-sun  { display: inline; }
+[data-theme="light"] .theme-toggle .icon-moon { display: none; }

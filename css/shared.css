@@ -1,0 +1,413 @@
+/* =============================================
+   SHARED.CSS — Dark Theme Portfolio
+   Nodirjon To'ychiyev
+   ============================================= */
+
+/* ---- Google Fonts + Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Colors */
+    --bg:          #0e1724;
+    --bg-2:        #0d1520;
+    --bg-3:        #111c2d;
+    --surface:     rgba(255,255,255,0.04);
+    --surface-2:   rgba(255,255,255,0.07);
+    --border:      rgba(255,255,255,0.15);
+    --border-2:    rgba(255,255,255,0.20);
+
+    --blue:        #3b82f6;
+    --blue-dark:   #1d4ed8;
+    --pink:        #ec4899;
+    --cyan:        #22d3ee;
+    --green:       #4ade80;
+
+    --text-1:      #f1f5f9;
+    --text-2:      #94a3b8;
+    --text-3:      #475569;
+    --text-4:      #a6b7cf;
+
+    /* Gradients */
+    --grad-main:   linear-gradient(135deg, var(--blue) 0%, var(--pink) 100%);
+    --grad-subtle: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(236,72,153,0.1));
+
+    /* Typography */
+    --font-mono:   'Space Mono', monospace;
+    --font-body:   'DM Sans', sans-serif;
+
+    /* Spacing */
+    --section-gap: 7rem;
+
+    /* Effects */
+    --glass: blur(16px) saturate(180%);
+    --radius: 12px;
+    --radius-lg: 20px;
+    --shadow: 0 8px 32px rgba(0,0,0,0.4);
+    --shadow-blue: 0 0 40px rgba(59,130,246,0.15);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    color: var(--text-1);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+ul { list-style: none; }
+
+/* ---- Container ---- */
+.container {
+    width: 100%;
+    max-width: 1160px;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+/* ---- Section gap ---- */
+.section-gap { padding: var(--section-gap) 0; }
+
+/* ---- Section labels ---- */
+.section-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--blue);
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-family: var(--font-body);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 600;
+    color: var(--text-1);
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+}
+
+/* ---- Glass card ---- */
+.glass-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    backdrop-filter: var(--glass);
+    -webkit-backdrop-filter: var(--glass);
+    border-radius: var(--radius-lg);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.glass-card:hover {
+    border-color: var(--border-2);
+}
+
+/* ---- Buttons ---- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn--primary {
+    background: var(--grad-main);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(59,130,246,0.3);
+}
+.btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(59,130,246,0.45);
+}
+.btn--ghost {
+    background: transparent;
+    color: var(--text-1);
+    border: 1px solid var(--border-2);
+}
+.btn--ghost:hover {
+    background: var(--surface-2);
+    border-color: var(--blue);
+    color: var(--blue);
+}
+.btn--large {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+}
+
+/* ---- Brand logo ---- */
+.brand {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-1);
+}
+
+.brand img {
+    width: 60px;
+}
+
+.brand__bracket { color: var(--blue); }
+.brand__name { color: var(--text-1); }
+
+/* ---- HEADER ---- */
+.main-header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+.main-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-header.scrolled {
+    background: rgba(8,13,20,0.9);
+    backdrop-filter: blur(20px);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+.nav-link {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--text-2);
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.25s;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--blue);
+    background: rgba(59,130,246,0.1);
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 110;
+}
+.hamburger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--text-1);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.hamburger.is-active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.is-active span:nth-child(2) { opacity: 0; }
+.hamburger.is-active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ---- FOOTER ---- */
+.footer {
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 2rem;
+}
+.footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+.footer__nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.footer__nav a {
+    font-size: 0.8rem;
+    color: var(--text-2);
+    transition: color 0.3s;
+}
+.footer__nav a:hover { color: var(--blue); }
+
+.footer__socials {
+    display: flex;
+    gap: 0.75rem;
+}
+.footer__socials a {
+    width: 38px; height: 38px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--border-2);
+    color: var(--text-2);
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+.footer__socials a:hover {
+    background: var(--grad-main);
+    border-color: transparent;
+    color: #fff;
+}
+.footer__copy {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-3);
+    font-family: var(--font-mono);
+}
+
+/* ---- Orbs (background glow) ---- */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+.orb--blue {
+    width: 500px; height: 500px;
+    background: rgba(59,130,246,0.12);
+    top: -100px; right: -100px;
+}
+.orb--pink {
+    width: 400px; height: 400px;
+    background: rgba(236,72,153,0.08);
+    bottom: 0; left: -100px;
+}
+.orb--small { width: 300px; height: 300px; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    :root { --section-gap: 4rem; }
+
+    .main-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--bg);
+        z-index: 105;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-nav.is-open {
+        display: flex;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    .nav-link { font-size: 1rem; padding: 0.75rem 2rem; }
+    .hamburger { display: flex; }
+
+    .footer__inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer__nav { justify-content: center; }
+}
+
+/* =============================================
+   LIGHT THEME
+   ============================================= */
+[data-theme="light"] {
+    --bg:          #f5f7ff;
+    --bg-2:        #eef0fb;
+    --bg-3:        #e4e8f8;
+    --surface:     rgba(221, 225, 238, 0.74);
+    --surface-2:   rgba(248, 251, 252, 0.986);
+    --border:      rgba(156,160,176,0.35);
+    --border-2:    rgba(30,102,245,0.25);
+
+    --blue:        #1e66f5;
+    --pink:        #d20f39;
+    --mauve:       #8839ef;
+    --green:       #40a02b;
+
+    --text-1:      #1a1a2e;
+    --text-2:      #4a4a6a;
+    --text-3:      #9090b0;
+    --text-4:      #8897d1;
+
+    --grad-main:   linear-gradient(135deg, #1e66f5 0%, #94beee 100%);
+    --grad-subtle: linear-gradient(135deg, rgba(30,102,245,0.1), rgba(136,57,239,0.07));
+    --shadow:      0 8px 32px rgba(76,79,105,0.15);
+}
+
+[data-theme="light"] .main-header.scrolled {
+    background: rgba(200, 207, 221, 0.432);
+}
+[data-theme="light"] .main-nav.is-open {
+    background: #d2dae9;
+}
+[data-theme="light"] .hero__grid {
+    background-image: radial-gradient(circle, rgba(76,79,105,0.1) 1px, transparent 1px);
+}
+[data-theme="light"] .c-keyword { color: #d20f39; }
+[data-theme="light"] .c-class   { color: #209fb5; }
+[data-theme="light"] .c-fn      { color: #8839ef; }
+[data-theme="light"] .c-param   { color: #fe640b; }
+[data-theme="light"] .c-str     { color: #40a02b; }
+
+/* Logo light rejimda ko'rinishi */
+
+/* CSS da: */
+[data-theme="light"] .logo-img {
+    content: url('/images/qizil.png');
+}
+
+[data-theme="light"] .project-card--featured {
+    background: var(--surface);
+    border-color: rgba(30,102,245,0.2);
+}
+
+[data-theme="light"] .hero__card {
+    background: #a0c6f72d;
+    border-color: rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .hero {
+    background: none;
+}
+
+[data-theme="light"] .orb--blue {
+    background: rgba(30,102,245,0.05);
+}
+
+[data-theme="light"] .orb--pink {
+    background: rgba(136,57,239,0.04);
+}
+
+/* SweetAlert oynasini umumiy dizayni */
+.swal2-popup {
+    border-radius: 20px !important; /* Burchaklarni yumshatish */
+    font-family: 'Poppins', sans-serif; /* Saytingiz shriftiga moslang */
+    padding: 20px;
+}
+
+/* "OK" tugmasini chiroyli qilish */
+.swal2-styled.swal2-confirm {
+    border-radius: 10px !important;
+    padding: 10px 30px;
+    font-weight: 600;
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nodirjon To'ychiyev bilan bog'laning — Python Backend va Telegram Bot Developer.">
+    <title>Nodirjon | Bog'lanish</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/shared.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/i18n.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    (function(){
+        const t = localStorage.getItem('portfolio_theme');
+        if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+
+    </script>
+</head>
+<body>
+
+    <header class="main-header" id="header">
+        <div class="container">
+            <a href="index.html" class="brand">
+               <img class="logo-img" src="/images/oqlogo.png" alt="Logo">
+            </a>
+            <button class="hamburger" aria-label="Menu" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Asosiy</a></li>
+                    <li><a href="index.html#about" class="nav-link" data-i18n="nav_about">Men haqimda</a></li>
+                    <li><a href="index.html#skills" class="nav-link" data-i18n="nav_skills">Ko'nikmalar</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link" data-i18n="nav_portfolio">Portfolio</a></li>
+                    <li><a href="contact.html" class="nav-link active" data-i18n="nav_contact">Bog'lanish</a></li>
+                </ul>
+                <!-- ... switcher qoladi ... -->
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="uz">UZ</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="theme-toggle" aria-label="Mavzuni almashtirish">
+                    <i class="fas fa-sun icon-sun"></i>
+                    <i class="fas fa-moon icon-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== CONTACT PAGE ==================== -->
+    <main class="contact-page">
+        <div class="orb orb--blue" aria-hidden="true"></div>
+        <div class="orb orb--pink" aria-hidden="true"></div>
+
+        <div class="container">
+            <!-- Page header -->
+            <div class="contact-page__header">
+                <p class="section-label" data-i18n="contact_label">// bog'lanish</p>
+                <h1 class="section-title" data-i18n="contact_title"></h1>
+                <p class="contact-page__intro" data-i18n="contact_intro">
+                    Python Telegram bot, Frontend, yoki — har qanday loyiha uchun yozing. 
+                    Odatda <strong>24 soat</strong> ichida javob beraman.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- Left: Form -->
+                <div class="contact-form-col">
+                    <div class="glass-card contact-form-card">
+                        <form action="https://formspree.io/f/xzdoyogj" method="post" novalidate id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstname" data-i18n="form_name_label">Ismingiz</label>
+                                    <input type="text" id="firstname" data-i18n="form_name_ph" name="firstname"
+                                        placeholder="Nodirjon" autocomplete="given-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" data-i18n="form_email_label">Email</label>
+                                    <input type="email" data-i18n="form_email_ph" id="email" name="email"
+                                        placeholder="email@example.com" autocomplete="email">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" data-i18n="form_subject_label">Mavzu</label>
+                                <input type="text" id="subject" data-i18n="form_subject_ph" name="subject"
+                                    placeholder="Telegram bot yaratish">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" data-i18n="form_msg_label">Xabar</label>
+                                <textarea id="message" data-i18n="form_msg_ph" name="message" rows="6"
+                                    placeholder="Loyiha haqida batafsil yozing..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn--primary btn--submit" data-i18n="form_send_btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Xabar jo'natish
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right: Info -->
+                <div class="contact-info-col">
+                    <div class="contact-info-cards">
+
+                        <a href="https://t.me/Nodirjon_Tuychiev" class="info-card glass-card" target="_blank">
+                            <div class="info-card__icon" style="--accent: #2AABEE">
+                                <i class="fab fa-telegram"></i>
+                            </div>
+                            <div class="info-card__text">
+                                <strong data-i18n="telegram">Telegram</strong>
+                                <span>@Nodirjon_Tuychiev</span>
+                            </div>
+                            <i class="fas fa-arrow-right info-card__arrow"></i>
+                        </a>
+
+                        <a href="mailto:bekbola@gmail.com" class="info-card glass-card">
+                            <div class="info-card__icon" style="--accent: #3b82f6">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-card__text">
+                                <strong>Email</strong>
+                                <span>bekbola@gmail.com</span> 
+                            </div>
+                            <i class="fas fa-arrow-right info-card__arrow"></i>
+                        </a>
+
+                        <a href="tel:+998903058545" class="info-card glass-card">
+                            <div class="info-card__icon" style="--accent: #4ade80">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-card__text">
+                                <strong data-i18n="phone">Telefon</strong>
+                                <span>+998 90 305 85 45</span>
+                                <small data-i18n="info_phone_hours">8:00–19:00</small>
+                            </div>
+                            <i class="fas fa-arrow-right info-card__arrow"></i>
+                        </a>
+
+                        <div class="info-card glass-card info-card--location">
+                            <div class="info-card__icon" style="--accent: #f472b6">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-card__text">
+                                <strong data-i18n="location">Joylashuv</strong>
+                                <span  data-i18n="info_location">Farg'ona viloyati</span>
+                                <small data-i18n="info_country">O'zbekiston</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Availability status -->
+                    <div class="availability glass-card">
+                        <div class="availability__dot"></div>
+                        <div>
+                            <strong data-i18n="avail_title">Hozirda loyihalarga ochiqman</strong>
+                            <p data-i18n="avail_sub">Frilanser buyurtmalar qabul qilinadi</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <a href="index.html" class="brand">
+                    <img class="logo-img" src="/images/oqlogo.png" alt="Logo">
+                </a>
+                <nav><ul class="footer__nav">
+                    <li><a href="index.html" data-i18n="nav_home">Asosiy</a></li>
+                    <li><a href="index.html#portfolio" data-i18n="nav_portfolio">Portfolio</a></li>
+                    <li><a href="contact.html" data-i18n="nav_contact">Bog'lanish</a></li>
+                </ul></nav>
+                <ul class="footer__socials">
+                    <li><a href="https://t.me/Nodirjon_Tuychiev" aria-label="Telegram"><i class="fab fa-telegram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/nodirjon-tuychiyev/" aria-label="linkedin"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </div>
+            <p class="footer__copy" data-i18n="footer_copy">© 2026 Nodirjon To'ychiyev · Built with HTML & CSS</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('mainNav');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('is-open');
+            hamburger.classList.toggle('is-active');
+            document.body.style.overflow = nav.classList.contains('is-open') ? 'hidden' : '';
+        });
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+    <script src="./js/i18n.js"></script>
+</body>
+</html>
