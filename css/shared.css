@@ -150,6 +150,7 @@ ul { list-style: none; }
 
 .brand img {
     width: 60px;
+    height: auto;
 }
 
 .brand__bracket { color: var(--blue); }
@@ -296,7 +297,12 @@ ul { list-style: none; }
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
-    :root { --section-gap: 4rem; }
+    :root { --section-gap: 3.5rem; }
+
+    /* Container yon bo'shliqlarini kamaytirish */
+    .container {
+        padding: 0 1rem;
+    }
 
     .main-nav {
         display: none;
@@ -373,7 +379,7 @@ ul { list-style: none; }
 
 /* CSS da: */
 [data-theme="light"] .logo-img {
-    content: url('images/qizil.png');
+    content: url('/images/qizil.png');
 }
 
 [data-theme="light"] .project-card--featured {
