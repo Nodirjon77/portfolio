@@ -497,6 +497,11 @@
     .cta__inner { padding: 3rem 1.25rem; }
 }
 
+@media (max-width: 768px) {
+    /* ... mavjud kodlar ... */
+    
+    .scroll-hint { display: none; }  /* ← shu qatorni qo'shing */
+}
 :root {
     --section-gap: 5rem;   /* 7rem edi */
 }
