@@ -231,7 +231,7 @@ const Theme = (() => {
         localStorage.setItem(KEY, theme);
         // Logo almashtirish — CSS content: url() GitHub Pages da ishlamaydi
         document.querySelectorAll('.logo-img').forEach(img => {
-            img.src = theme === 'light' ? '/images/qizil.png' : '/images/oqlogo.png';
+            img.src = theme === 'light' ? 'images/qizil.png' : 'images/oqlogo.png';
         });
     }
 
